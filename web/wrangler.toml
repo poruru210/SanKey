@@ -1,1 +1,8 @@
-compatibility_flags = [ "nodejs_compat" ]
+name = "sankey-app"
+compatibility_date = "2025-05-21"
+
+# ✅ Cloudflare Pages用出力先
+pages_build_output_dir = "./.vercel/output/static"
+
+# ✅ Node.js 互換モードの明示
+compatibility_flags = ["nodejs_compat"]
