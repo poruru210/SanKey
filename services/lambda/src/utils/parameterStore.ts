@@ -10,5 +10,5 @@ export async function getMasterKey(): Promise<CryptoKey> {
     WithDecryption: true
   }));
   const keyBuffer = Buffer.from(Parameter!.Value!, 'base64');
-  return webcrypto.subtle.importKey('raw', keyBuffer, 'AES-GCM', false, ['encrypt']);
+  return webcrypto.subtle.importKey('raw', keyBuffer, 'AES-CBC', true, ['encrypt']);
 }

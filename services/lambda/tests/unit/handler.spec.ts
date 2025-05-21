@@ -8,7 +8,7 @@ jest.mock('../../src/utils/parameterStore');
 describe('handler', () => {
   it('should return statusCode 200 and a license', async () => {
     const keyData = Buffer.alloc(32, 2);
-    const key = await webcrypto.subtle.importKey('raw', keyData, 'AES-GCM', false, ['encrypt']);
+    const key = await webcrypto.subtle.importKey('raw', keyData, 'AES-CBC', true, ['encrypt']);
     (getMasterKey as jest.Mock).mockResolvedValue(key);
 
     const event = {
