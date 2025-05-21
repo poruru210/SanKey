@@ -32,7 +32,7 @@ export function ParticlesBackground() {
                 color: { value: "#0a5d26" },
                 links: { enable: true, distance: 150, color: "#0a5d26", opacity: 0.2, width: 1 },
                 move: { enable: true, outModes: { default: "bounce" } },
-                number: {  value: 50 },
+                number: {  value: 50, density:{enable:true, height:800, width:1200} },
                 shape: { type: "circle" },
                 size: { value: { min: 1, max: 3 } },
               },
