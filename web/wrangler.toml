@@ -1,0 +1,5 @@
+name = "sankey-app"
+compatibility_date = "2025-05-21"
+
+# Node.js の互換モードを明示的に有効にする
+compatibility_flags = ["nodejs_compat"]
