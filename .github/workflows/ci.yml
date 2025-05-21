@@ -1,0 +1,33 @@
+name: Build SankeyDecoder DLL (x86 + x64) into out/ directory
+
+on:
+  # push:
+  #   branches: [ main ]
+  # pull_request:
+  #   branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        arch: [Win32, x64]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Configure CMake for ${{ matrix.arch }}
+      run: |
+        cmake -S . -B build-${{ matrix.arch }} -G "Visual Studio 17 2022" -A ${{ matrix.arch }}
+
+    - name: Build DLL (${{ matrix.arch }})
+      run: |
+        cmake --build build-${{ matrix.arch }} --config Release
+
+    - name: Upload DLL artifact (${{ matrix.arch }})
+      uses: actions/upload-artifact@v3
+      with:
+        name: SankeyDecoder-${{ matrix.arch }}.dll
+        path: build-${{ matrix.arch }}/bin/Release/SankeyDecoder.dll
