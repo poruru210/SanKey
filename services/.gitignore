@@ -1,0 +1,46 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+.pnpm-debug.log
+
+# Cloudflare Workers build output
+dist/
+.build/
+.wrangler/
+.cache/
+
+# TypeScript
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+*.log
+
+# Vite/Vitest
+.vitest/
+.vite/
+
+# dotenv environment variables
+.env
+.env.local
+.env.*.local
+
+# macOS and Windows system files
+.DS_Store
+Thumbs.db
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+
+# Optional: log + temp
+*.log
+tmp/
+temp/

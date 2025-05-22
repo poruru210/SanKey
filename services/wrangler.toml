@@ -5,10 +5,11 @@ compatibility_date = "2025-05-22"
 [[d1_databases]]
 binding = "DB"
 database_name = "sanky-db"
+database_id = "b350c7aa-8edb-4437-a48c-bc9e330091f3"
 
 [[r2_buckets]]
-binding = "R2"
 bucket_name = "sanky-licenses"
+binding = "R2"
 
 [vars]
 # Secrets like SENDGRID_API_KEY should be set via `wrangler secret put`
